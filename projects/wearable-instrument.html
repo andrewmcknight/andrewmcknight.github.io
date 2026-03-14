@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wearable Electronic Instrument — Andrew McKnight</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../music.html">Music</a>
+      <a href="../photography.html">Photography</a>
+      <a href="../resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <nav id="sidenav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../music.html">Music</a></li>
+      <li><a href="../photography.html">Photography</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <a href="../projects.html" class="back-link">← Projects</a>
+
+    <h1>Wearable Electronic Instrument</h1>
+    <p class="project-meta">ECE 469: Wearable &amp; Ubiquitous Computing Design &nbsp;|&nbsp; Team of 4 &nbsp;|&nbsp; Spring 2026</p>
+
+    <!-- ============================================
+         MEDIA SECTION
+         ============================================ -->
+    <div class="project-media">
+      <div class="media-placeholder"><span>[ glove hardware (coming soon) ]</span></div>
+      <div class="media-placeholder"><span>[ web app interface (coming soon) ]</span></div>
+    </div>
+
+    <p class="scroll-hint">→ scroll to see more →</p>
+
+    <div class="project-section">
+      <h2>Overview</h2>
+      <p>
+        A glove-based electronic musical instrument that translates hand, arm,
+        and finger movements into sound in real time. The instrument is designed
+        to be expressive and playable — mapping physical gesture to musical
+        parameters like pitch, volume, timbre, and effects through customizable
+        gesture-to-sound profiles.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>Technical Details</h2>
+      <ul>
+        <li>Flex sensors on each finger detect individual finger bend angles</li>
+        <li>IMU captures hand and arm orientation, acceleration, and gesture detection</li>
+        <li>Microcontroller performs sensor fusion and signal processing on-device</li>
+        <li>Sensor data maps to musical parameters — pitch, volume, timbre, effects — with customizable gesture-to-sound profiles</li>
+        <li>Companion web application with BLE connectivity for real-time parameter control, sound mapping configuration, and visual feedback</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2>Status</h2>
+      <p>
+        In progress as of Spring 2026. Hardware integration and sensor fusion
+        are underway; web app interface and BLE communication pipeline are
+        in active development.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

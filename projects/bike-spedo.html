@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bike Speedometer — Andrew McKnight</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../music.html">Music</a>
+      <a href="../photography.html">Photography</a>
+      <a href="../resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <nav id="sidenav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../music.html">Music</a></li>
+      <li><a href="../photography.html">Photography</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <a href="../projects.html" class="back-link">← Projects</a>
+
+    <h1>Bike Speedometer with Hall Effect Sensor</h1>
+    <p class="project-meta">ECE 495: Product Design &nbsp;|&nbsp; Individual &nbsp;|&nbsp; Fall 2025 &nbsp;|&nbsp; 1-week mini project</p>
+
+    <!-- ============================================
+         MEDIA SECTION
+         Demo video, speedometer unit, internals, sensor mounting.
+         ============================================ -->
+    <div class="project-media-wrapper">
+      <div class="project-media">
+        <figure>
+          <video controls>
+            <source src="../projects/media/bike-spedo-movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Demo video of the speedometer in action</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/bike-spedo-internals.png" alt="Speedometer internals" />
+          <figcaption>Interior view of the unit, showing wiring and Arduino</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/bike-spedo-sensor-housing.png" alt="Sensor housing" />
+          <figcaption>Hall sensor in custom 3D-printed housing</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/bike-spedo-sensor-and-magnet.png" alt="Sensor and magnet" />
+          <figcaption>Sensor attached to bike frame; magnet on wheel spoke</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="scroll-hint">→ scroll to see more →</p>
+
+    <!-- Overview -->
+    <div class="project-section">
+      <h2>Overview</h2>
+      <p>
+        A one-week mini project built with an Arduino kit and whatever materials I had on hand. The result is a functional bike speedometer using a hall effect sensor and a 16×2 LCD display. The system measures wheel revolutions via a magnet mounted to a spoke, computes real-time speed and cumulative distance, and displays both on a handlebar-mounted enclosure. A button toggles between miles and kilometers; a second resets the odometer; a dial adjusts the display contrast.
+      </p>
+      <p>
+        The motivation was practical — I'd moved off-campus and was biking daily. A speedometer was something I'd actually use, and working within a tight one-week window with no budget pushed me to focus on getting something real and functional rather than overthinking the design.
+      </p>
+    </div>
+
+    <!-- Technical Details -->
+    <div class="project-section">
+      <h2>Technical Details</h2>
+      <ul>
+        <li>Hall effect sensor detects each wheel revolution as a magnet on the spoke passes by; mounted in a custom 3D-printed housing near the rear hub</li>
+        <li>Sensor signal and power routed from the rear hub to the handlebar unit via a repurposed USB cable threaded along the frame</li>
+        <li>Arduino counts pulses, converts to speed and distance using wheel circumference, and refreshes the 16×2 LCD in real time</li>
+        <li>Laser-cut wooden enclosure mounts to the handlebars with flush-integrated buttons for unit toggling and odometer reset</li>
+        <li>Potentiometer controls LCD contrast; all electronics self-contained within the enclosure</li>
+      </ul>
+    </div>
+
+    <!-- Outcome -->
+    <div class="project-section">
+      <h2>Outcome</h2>
+      <p>
+        The speedometer worked reliably from first ride — speed and distance update accurately in real time, the unit/reset buttons behave as intended, and the sensor consistently picks up every revolution. Given one week and a $0 budget, the hardest part was purely physical: mounting hardware to curved, uneven bike surfaces that needed to withstand high speeds and road vibration, using only what was on hand — zip ties, hot glue, and tape. Getting it all working within those constraints, and then actually using it on the commute to campus, made it one of the more satisfying quick builds I've done.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Ordinances Platform — Andrew McKnight</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../music.html">Music</a>
+      <a href="../photography.html">Photography</a>
+      <a href="../resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <nav id="sidenav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../music.html">Music</a></li>
+      <li><a href="../photography.html">Photography</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <a href="../projects.html" class="back-link">← Projects</a>
+
+    <h1>U.S. County Solar Ordinances &amp; Sentiment Analysis Platform</h1>
+    <p class="project-meta">AI Engineering Intern &nbsp;|&nbsp; Strata Clean Energy &nbsp;|&nbsp; Summer 2025</p>
+
+    <!-- ============================================
+         MEDIA SECTION
+         Add screenshots of the heatmap, drill-down sidebar,
+         sentiment analysis view, and report view.
+         ============================================ -->
+    <div class="project-media-wrapper">
+      <div class="project-media">
+        <figure>
+          <img src="../projects/media/solar-ordinance-analysis-sidebar.png" alt="Ordinance analysis sidebar" />
+          <figcaption>Ordinance analysis example</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/solar-sentiment-analysis-sidebar.png" alt="Sentiment analysis sidebar" />
+          <figcaption>Sentiment analysis example</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/solar-heatmap.png" alt="County heatmap view" />
+          <figcaption>County heatmap view</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/solar-report.png" alt="Generated report view" />
+          <figcaption>Generated report view</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="scroll-hint">→ scroll to see more →</p>
+
+    <div class="project-section">
+      <h2>Overview</h2>
+      <p>
+        Built during a summer internship at Strata Clean Energy, a leading
+        utility-scale solar developer. The platform automates county-level
+        solar siting risk assessment across the U.S. — work that previously
+        required days of manual regulatory and market research per county.
+      </p>
+      <p>
+        The tool aggregates zoning ordinances, permitting requirements, land-use
+        codes, local news, government announcements, county board meeting minutes, and public statements, then
+        synthesizes findings into actionable risk scores viewable on an
+        interactive national heatmap.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>Technical Details</h2>
+      <ul>
+        <li>Agentic AI pipeline: performs dozens of automated Google searches per county, crawls ordinance repositories and government sites, downloads and parses PDFs and webpages</li>
+        <li>Multi-layer analysis pipeline: ordinance extraction, risk classification, sentiment modeling, and summarization</li>
+        <li>Interactive map UI with county-level heatmap visualization — toggleable between ordinance, sentiment, and combined scores</li>
+        <li>Satellite and street map views with overlays showing existing U.S. solar farms and Strata's project pipeline</li>
+        <li>Per-county drill-down sidebar with AI-generated summaries, source links for verification, and detailed regulatory reports</li>
+        <li>Dashboard view with score distribution charts, searchable/sortable county tables, and progress tracking across analyzed regions</li>
+        <li>Feedback system for employees to flag incorrect data or AI interpretation issues</li>
+        <li>Results propagate globally — any analysis triggered by one user updates the map, sidebar, and dashboard for all users</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2>Outcome</h2>
+      <p>
+        Presented the application to stakeholders across the company. Led
+        cross-functional meetings to evaluate additional AI use cases across
+        departments. The tool is in active internal use at Strata for
+        development strategy and risk assessment. Continued developing the
+        platform as a project manager for the Duke Energy &amp; Climate Club
+        in Fall 2025.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

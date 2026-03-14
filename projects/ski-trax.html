@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ski Trax — Andrew McKnight</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- Mobile top nav -->
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../music.html">Music</a>
+      <a href="../photography.html">Photography</a>
+      <a href="../resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <!-- Side nav -->
+  <nav id="sidenav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../music.html">Music</a></li>
+      <li><a href="../photography.html">Photography</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Back link -->
+    <a href="../projects.html" class="back-link">← Projects</a>
+
+    <h1>Ski Trax</h1>
+    <p class="project-meta">ECE 495: Product Design &nbsp;|&nbsp; Team of 4 &nbsp;|&nbsp; Fall 2025</p>
+
+    <!-- ============================================
+         MEDIA SECTION
+         ============================================ -->
+    <div class="project-media-wrapper">
+      <div class="project-media">
+        <figure>
+          <img src="../projects/media/ski-trax-schematic.png" alt="Schematic" />
+          <figcaption>Circuit schematic</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/ski-trax-pcb.png" alt="PCB layout" />
+          <figcaption>PCB layout</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/ski-trax-breadboard-proto.png" alt="Breadboard prototype" />
+          <figcaption>Breadboard prototype</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/ski-trax-pcbs-on-table.png" alt="Assembled PCBs" />
+          <figcaption>Assembled PCBs</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/ski-trax-internals.png" alt="Device internals" />
+          <figcaption>Device internals</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/ski-trax-case-animation.gif" alt="Case animation" />
+          <figcaption>3D-printed enclosure</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/ski-trax-in-hand.png" alt="Device in hand" />
+          <figcaption>Finished device</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/ski-trax-in-snow.png" alt="Device in snow" />
+          <figcaption>Field test</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="scroll-hint">→ scroll to see more →</p>
+
+    <!-- Overview -->
+    <div class="project-section">
+      <h2>Overview</h2>
+      <p>
+        Ski Trax is an off-grid tracking device that lets skiers locate friends
+        and family on the slopes without cell service. Each person in a group
+        carries a small device and can see the direction and distance to others
+        via an on-device display with a directional arrow indicator — no
+        phone, no cell signal required.
+      </p>
+    </div>
+
+    <!-- Technical Details -->
+    <div class="project-section">
+      <h2>Technical Details</h2>
+      <ul>
+        <li>Designed a custom PCB integrating a LoRa radio module for long-range, low-power mesh communication between devices</li>
+        <li>GPS receiver for position acquisition; IMU for orientation sensing; barometric pressure sensor for altitude</li>
+        <li>Developed embedded software for real-time position tracking and inter-device communication over the LoRa mesh network</li>
+        <li>Relative bearing and distance calculation between group members computed on-device</li>
+        <li>Designed the on-device display UI with an intuitive directional arrow indicator pointing toward other group members</li>
+      </ul>
+    </div>
+
+    <!-- Results -->
+    <div class="project-section">
+      <h2>Outcome</h2>
+      <p>
+        Presented a fully working prototype at the Duke Product Design Trade Show.
+        The device successfully communicated position between units and displayed
+        accurate bearing and distance in real-time testing.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

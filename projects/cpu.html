@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom 32-Bit Pipelined CPU — Andrew McKnight</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../music.html">Music</a>
+      <a href="../photography.html">Photography</a>
+      <a href="../resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <nav id="sidenav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../music.html">Music</a></li>
+      <li><a href="../photography.html">Photography</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <a href="../projects.html" class="back-link">← Projects</a>
+
+    <h1>Custom 32-Bit Pipelined CPU</h1>
+    <p class="project-meta">ECE 350L: Digital Systems &nbsp;|&nbsp; Spring 2025</p>
+
+    <p><a href="https://github.com/andrewmcknight/cpu">View on GitHub →</a></p>
+
+    <!-- ============================================
+         MEDIA SECTION
+         Included: pipeline schematic and rstatus schematic.
+         ============================================ -->
+    <div class="project-media-wrapper">
+      <div class="project-media">
+        <figure>
+          <img src="../projects/media/cpu-pipeline-schematic.png" alt="5-stage pipeline schematic" />
+          <figcaption>5-stage pipeline schematic</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/cpu-pipeline-schematic-rstatus.png" alt="Rstatus logic schematic" />
+          <figcaption>Rstatus logic schematic</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="scroll-hint">→ scroll to see more →</p>
+
+    <div class="project-section">
+      <h2>Overview</h2>
+      <p>
+        A semester-long project building a fully functional 32-bit processor
+        from the ground up — starting from fundamental logic gates.
+        Every module was constructed at the gate level. No behavioral shortcuts.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>The CPU</h2>
+      <ul>
+        <li>Designed in structural Verilog from fundamental gates (AND, OR, NOT, XOR); every multiplexer, adder, shifter, and register file built from scratch</li>
+        <li>5-stage pipeline: Fetch, Decode, Execute, Memory, Writeback</li>
+        <li>Custom ISA supporting 17 instructions: arithmetic (add, sub, mul, div), logic (and, or, sll, sra), memory (lw, sw), and control flow (j, jal, jr, bne, blt, bex, setx)</li>
+        <li>Prioritized data forwarding / bypass paths using cascaded multiplexer trees to resolve data hazards without stalling</li>
+        <li>Load-use hazard detection with single-cycle stall insertion</li>
+        <li>Multi-cycle multiply/divide with pipeline hold logic</li>
+        <li>Branch and jump flush mechanisms for control hazards</li>
+        <li>Arithmetic exception detection with automatic rstatus register updates</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

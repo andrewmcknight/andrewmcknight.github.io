@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Andrew McKnight</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="music.html">Music</a>
+      <a href="photography.html">Photography</a>
+      <a href="resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <nav id="sidenav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main class="resume-page">
+    <h1>Resume</h1>
+
+    <div class="resume-header">
+      <a href="mcknight-resume.pdf" class="resume-download" target="_blank" rel="noopener noreferrer">Download PDF →</a>
+      <div class="resume-contact">
+        <span>andrewmcknight.eng@gmail.com</span>
+        <span>(917) 539-2425</span>
+        <a href="https://www.linkedin.com/in/andrewfmcknight/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/andrewmcknight" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <section class="resume-section">
+      <h2>Education</h2>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Duke University</span>
+          <span class="date">Aug 2022 – May 2026</span>
+        </div>
+        <div class="subtitle">B.S.E., Electrical &amp; Computer Engineering</div>
+        <div class="subtitle">GPA: 3.952 | Dean's List, all semesters</div>
+        <div class="resume-detail-list">
+          <p><span class="label">Relevant coursework:</span> Computer Architecture, Digital Systems, Deep Learning, Applied ML, Signals &amp; Systems, Wearable Computing, Operating Systems, Data Structures &amp; Algorithms, Product Design</p>
+          <p><span class="label">Study abroad:</span> University of Sydney (Summer &amp; Fall 2024) | Duke in Rome (Summer 2023)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="resume-section">
+      <h2>Experience</h2>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">AI Engineering Intern</span>
+          <span class="date">May – Aug 2025</span>
+        </div>
+        <div class="subtitle">Strata Clean Energy, Durham, NC</div>
+        <div class="subtitle">U.S. County Solar Ordinances &amp; Sentiment Analysis Platform</div>
+        <ul>
+          <li>Designed and built a full-stack AI web application evaluating county-level solar siting risk across the U.S., automating days of manual regulatory and market research</li>
+          <li>Architected an agentic AI pipeline performing automated web searches per county, crawling local government websites, parsing PDFs, and running multi-layer analysis (risk classification, sentiment modeling, summarization)</li>
+          <li>Built an interactive map UI with county-level heatmap visualization, toggleable score layers, per-county drill-down sidebar with AI-generated summaries and source links, and a dashboard with score distributions and searchable county tables</li>
+          <li>Led cross-functional meetings to evaluate AI use cases; presented application to company-wide stakeholders; consulted on technical feasibility of proposed AI initiatives across departments</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Teaching Assistant, ECE 110: Fundamentals of ECE</span>
+          <span class="date">Jan – May 2024</span>
+        </div>
+        <div class="subtitle">Duke University, Pratt School of Engineering</div>
+        <div class="subtitle">Circuit analysis, frequency representation, filtering, digital logic</div>
+        <ul>
+          <li>Held weekly office hours for one-on-one and small-group support; led exam review sessions for the full class; graded assignments and exams with detailed written feedback</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Apprentice Carpenter</span>
+          <span class="date">Summers 2020 &amp; 2021</span>
+        </div>
+        <div class="subtitle">The Challenge Program, Wilmington, DE</div>
+        <div class="subtitle">Vocational nonprofit providing job training to at-risk youth</div>
+        <ul>
+          <li>Handcrafted artisan furniture and welded steel components; refurbished 800+ sq. ft. of shop storage as a team of 3</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="resume-section">
+      <h2>Projects</h2>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Ski Trax: Off-Grid Skier Tracking Device</span>
+          <span class="date">Sep – Dec 2025</span>
+        </div>
+        <div class="subtitle">ECE 495: Product Design, Team of 4</div>
+        <ul>
+          <li>Designed a custom PCB integrating LoRa radio for long-range mesh communication, GPS receiver, IMU, barometric pressure sensor, and LCD display for an off-grid device that shows direction and distance to group members</li>
+          <li>Developed embedded software for real-time position tracking, inter-device communication, and relative bearing/distance calculation; presented working prototype at the Duke Product Design Trade Show</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Custom 32-Bit Pipelined CPU &amp; FPGA Drum Kit</span>
+          <span class="date">Mar – May 2025</span>
+        </div>
+        <div class="subtitle">ECE 350L: Digital Systems</div>
+        <ul>
+          <li>Built a 32-bit processor in structural Verilog from fundamental logic gates with a 5-stage pipeline, 17-instruction custom ISA, prioritized data forwarding/bypass paths, and complete hazard detection with stall/flush logic</li>
+          <li>Extended the CPU onto an FPGA to control a physical electronic drum kit — programmed in assembly for real-time sensor input (force-sensitive resistors) and audio triggering via memory-mapped I/O</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Benchmarking Parameter-Efficient Fine-Tuning of LLMs</span>
+          <span class="date">Nov – Dec 2025</span>
+        </div>
+        <div class="subtitle">ECE 685D: Deep Learning, Team of 5</div>
+        <ul>
+          <li>Co-authored a research paper benchmarking LoRA, Sparse LoRA, QLoRA, and High-Rank LoRA on IMDB, SST-2, and WikiText-2 using DistilBERT and BERT-base (PyTorch, Hugging Face PEFT, Duke Compute Cluster)</li>
+          <li>Key results: QLoRA achieved 93.28% IMDB accuracy with 50% memory reduction at 2.5–3.5× training time; Sparse LoRA reached 50% sparsity with &lt;0.8pp accuracy loss</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Wearable Electronic Instrument</span>
+          <span class="date">Spring 2026</span>
+        </div>
+        <div class="subtitle">ECE 469: Senior Design Capstone, Team of 4</div>
+        <ul>
+          <li>Designing a glove-based instrument translating hand/finger movements into real-time music synthesis via flex sensors, IMU, microcontroller sensor fusion, and a BLE-connected web app</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="resume-section">
+      <h2>Technical Skills</h2>
+      <div class="resume-skills">
+        <p><span class="label">Programming Languages:</span> Python, MATLAB, Verilog, C, Assembly, Java, JavaScript, HTML/CSS, SQL</p>
+        <p><span class="label">Tools &amp; Frameworks:</span> Git, KiCad, PyTorch, Hugging Face, FPGA toolchains (Vivado), Arduino, LaTeX</p>
+        <p><span class="label">Concepts:</span> Embedded systems, PCB design, digital logic, AI/ML, full-stack development, signal processing, Agile/Scrum</p>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP & INTERESTS -->
+    <section class="resume-section">
+      <h2>Leadership &amp; Interests</h2>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Project Manager, Duke Energy &amp; Climate Club</span>
+          <span class="date">Sep – Nov 2025</span>
+        </div>
+        <div class="subtitle">Led team of 4 continuing development of Strata project</div>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Conversational Spanish</span>
+          <span class="date">May – Jun 2024</span>
+        </div>
+        <div class="subtitle">Intensive immersion program in Nosara, Costa Rica</div>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="title">Interests</span>
+        </div>
+        <div class="subtitle">Guitar, fiddle, basketball, film photography, hiking, skiing, surfing</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

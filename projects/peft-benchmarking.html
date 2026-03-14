@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmarking PEFT Methods — Andrew McKnight</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../music.html">Music</a>
+      <a href="../photography.html">Photography</a>
+      <a href="../resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <nav id="sidenav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../music.html">Music</a></li>
+      <li><a href="../photography.html">Photography</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <a href="../projects.html" class="back-link">← Projects</a>
+
+    <h1>Benchmarking Parameter-Efficient Fine-Tuning of LLMs</h1>
+    <p class="project-meta">ECE 685D: Introduction to Deep Learning &nbsp;|&nbsp; Team of 5 &nbsp;|&nbsp; Fall 2025</p>
+
+    <p><a href="../projects/media/peft-benchmarking-paper.pdf">Read the full paper →</a></p>
+    <p><a href="https://github.com/andrewmcknight/peft-benchmark">View the GitHub repo →</a></p>
+
+    <!-- MEDIA SECTION -->
+    <div class="project-media-wrapper">
+      <div class="project-media">
+        <figure>
+          <img src="../projects/media/peft-multi-dim-comparison.png" alt="Multi-dimensional comparison radar chart" />
+          <figcaption>Multi-dimensional comparison radar chart</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/peft-param-efficiency.png" alt="Parameter efficiency comparison" />
+          <figcaption>Parameter efficiency comparison</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/peft-training-time.png" alt="Training time comparison" />
+          <figcaption>Training time comparison</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="scroll-hint">→ scroll to see more →</p>
+
+    <div class="project-section">
+      <h2>Overview</h2>
+      <p>
+        Fine-tuning large language models is computationally expensive. This
+        paper benchmarks four parameter-efficient fine-tuning (PEFT) methods —
+        LoRA, Sparse LoRA, QLoRA, and High-Rank LoRA — evaluating their
+        trade-offs across accuracy, memory footprint, training time, inference
+        throughput, and trainable parameter count.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>Technical Details</h2>
+      <ul>
+        <li>Evaluated on three benchmark datasets: IMDB (binary sentiment), SST-2 (short-text sentiment), and WikiText-2 (language modeling)</li>
+        <li>Backbone models: DistilBERT (66M parameters) and BERT-base (110M parameters)</li>
+        <li>Implemented and ran all experiments using PyTorch and Hugging Face's PEFT library on the Duke Compute Cluster</li>
+        <li>Sparse LoRA variant used a cubic sparsity schedule with magnitude pruning and L1 regularization to reach 50% sparsity</li>
+        <li>High-Rank LoRA (r=32) used as a proxy for HiRA to test the effect of increased adapter capacity on generative tasks</li>
+        <li>Produced comprehensive analysis with radar charts, parameter efficiency comparisons, and deployment recommendations</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2>Key Findings</h2>
+      <ul>
+        <li><strong>QLoRA</strong> achieved the highest classification accuracy (93.28% on IMDB) with 50% memory reduction, but at a 2.5–3.5× training time penalty</li>
+        <li><strong>High-Rank LoRA</strong> achieved the best language modeling perplexity (2.62 on WikiText-2), suggesting higher adapter rank benefits generative tasks</li>
+        <li><strong>Sparse LoRA</strong> reached 50% sparsity with less than 0.8 percentage point accuracy loss — suggesting significant redundancy in low-rank adapters</li>
+        <li><strong>Standard LoRA</strong> provides the most balanced trade-off across all metrics and remains the safest default choice</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

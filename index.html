@@ -1,9 +1,74 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Andrew McKnight</title>
-    </head>
-    <body>
-        Hello, world!
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew McKnight</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MOBILE TOP NAV (only for small screens) -->
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="music.html">Music</a>
+      <a href="photography.html">Photography</a>
+      <a href="resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <!-- SIDE NAV (desktop) -->
+  <nav id="sidenav">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <h1>Andrew McKnight</h1>
+
+    <!-- PROFILE PHOTO -->
+    <img
+      src="headshot.png"
+      alt="Andrew McKnight"
+      class="profile-photo"
+      onerror="this.style.display='none'"
+    />
+
+    <!-- Bio paragraph -->
+    <p>
+      I'm a senior at Duke University studying Electrical &amp; Computer
+      Engineering. 
+      
+      I build things across the stack — custom computer processors, embedded tracking devices, AI-powered web applications, and more.
+    
+      Outside of engineering, I play guitar and fiddle, shoot film
+      photography, and spend as much time outdoors as I can.
+    </p>
+
+    <div class="home-links">
+      <a href="https://www.linkedin.com/in/andrewfmcknight/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/andrewmcknight" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+
+  </main>
+
+  <!-- MOBILE NAV TOGGLE SCRIPT -->
+  <script>
+    function toggleNav() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+</body>
 </html>

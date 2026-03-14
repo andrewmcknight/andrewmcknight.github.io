@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Synthesis — Andrew McKnight</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav id="topnav">
+    <button class="nav-toggle" onclick="toggleNav()">☰ menu</button>
+    <div class="nav-menu" id="mobile-menu">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../music.html">Music</a>
+      <a href="../photography.html">Photography</a>
+      <a href="../resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <nav id="sidenav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../music.html">Music</a></li>
+      <li><a href="../photography.html">Photography</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <a href="../projects.html" class="back-link">← Projects</a>
+
+    <h1>Music Synthesis in MATLAB</h1>
+    <p class="project-meta">ECE 280: Signals &amp; Systems &nbsp;|&nbsp; Feb 2024</p>
+
+    <p><a href="https://github.com/andrewmcknight/matlab-synth">View on GitHub →</a></p>
+
+    <!-- ============================================
+         MEDIA SECTION
+         ============================================ -->
+    <div class="project-media-wrapper">
+      <div class="project-media">
+        <figure>
+          <img src="../projects/media/matlab-synth-wav-plot.png" alt="Synthesized waveform" />
+          <figcaption>Full song waveform output</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/matlab-synth-wav-plot-50ms.png" alt="Waveform snippet" />
+          <figcaption>50ms window waveform plot</figcaption>
+        </figure>
+        <figure>
+          <img src="../projects/media/matlab-synth-spectrogram.png" alt="Spectrogram" />
+          <figcaption>Spectrogram of entire song</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="scroll-hint">→ scroll to see more →</p>
+
+    <div style="margin: var(--spacing-lg) 0;">
+      <audio controls>
+        <source src="../projects/media/eventually.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--grey-text);">Listen to the synthesized song "Eventually"</p>
+    </div>
+
+    <!-- Overview -->
+    <div class="project-section">
+      <h2>Overview</h2>
+      <p>
+        A MATLAB project to synthesize a recognizable song from scratch using signal processing fundamentals — no audio samples, no external libraries, just math. I chose to recreate "Eventually" by Tame Impala, specifically its distinctive bass riff, because I love the song and was curious whether I could capture its feel purely from first principles.
+      </p>
+      <p>
+        The final composition layers four synthesized instruments — bass, vocals, bells, and a custom snare drum — assembled measure-by-measure with effects including harmonics, exponential decay, piecewise attack/release envelopes, and reverb. The output is a renderable <code>.wav</code> file.
+      </p>
+    </div>
+
+    <!-- Technical Details -->
+    <div class="project-section">
+      <h2>Technical Details</h2>
+      <ul>
+        <li><strong>Note system:</strong> Programmatically generated 72 notes across 6 octaves using equal-temperament tuning (<code>f = 27.5 × 2^(i/12)</code>), each stored as a frequency variable</li>
+        <li><strong>Score assembly:</strong> Each instrument part was generated as a vector and summed measure-by-measure; measures were then concatenated into a final song vector and normalized</li>
+        <li><strong>Bass line:</strong> Sawtooth waves with two additional harmonic overtones (2nd and 3rd) for a full, aggressive sound characteristic of the original</li>
+        <li><strong>Vocal line:</strong> Sine waves with frequency-modulated harmonics and piecewise attack/sustain/release envelopes to approximate the smooth, airy quality of the song's lead</li>
+        <li><strong>Bells:</strong> Sine waves with exponentially decaying frequency modulation to simulate the metallic shimmer of a bell tone</li>
+        <li><strong>Snare drum:</strong> No fixed pitch — synthesized by summing 4,000 closely-spaced sine waves, scaling each sample by a random value, then applying exponential decay; the result closely mimics the broadband noise and transient character of a real snare hit</li>
+        <li><strong>Reverb:</strong> Implemented by adding scaled, delayed copies of the signal at 0.2s and 0.4s offsets, applied to the full mix</li>
+        <li><strong>Decay envelopes:</strong> Every note uses piecewise linear attack/sustain/decay profiles tuned per-instrument, on top of exponential amplitude decay</li>
+      </ul>
+    </div>
+
+    <!-- Outcome -->
+    <div class="project-section">
+      <h2>Outcome</h2>
+      <p>
+        The final output captures the feel of "Eventually" well enough to be recognizable. The bass riff translates particularly well — the sawtooth waveform and harmonic layering give it the same boomy aggression as the original. The snare was the most technically interesting challenge: a drum has no pitch, so the standard note-generation approach doesn't apply. Layering thousands of frequencies and randomizing their amplitudes turned out to be the right move, and the result is a convincing approximation of a snare hit synthesized entirely from code.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
